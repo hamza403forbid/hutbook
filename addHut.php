@@ -1,13 +1,15 @@
 <?php
-include_once("../db.php");
+include_once("db.php");
 $con = db_con::estabCon();
 $pic = $_REQUEST['picUrl'];
 $ish = $_REQUEST['is_hut'];
-$nam = $_REQUEST['name'];
+$city = $_REQUEST['city'];
+$area = $_REQUEST['area'];
 $cap = $_REQUEST['capacity'];
+$nam = $_REQUEST['name'];
 $rat = $_REQUEST['rating'];
-$loc = $_REQUEST['location'];
 $desc = $_REQUEST['description'];
+
 //$pic = 'http://www.abc.net.au/news/image/8458242-3x2-940x627.jpg';
 //$ish = 1;
 //$nam = 'Hut2';
@@ -25,7 +27,7 @@ if($con != NULL){
 		}
 	}
 	
-	$sql = "INSERT INTO `huts` (`id`, `pic`, `is_hut`, `name`, `capacity`, `rating`, `location`, `description`) VALUES (NULL,'".$pid. "', ".$ish.", '".$nam."', ".$cap.", ".$rat.", '".$loc."', '".$desc."')";
+	$sql = "INSERT INTO `huts` (`id`, `pic`, `is_hut`, `city`, `area`, `capacity`, `name`, `rating`, `description`) VALUES (NULL,'".$pid. "', ".$ish.", '".$city."', ".$area.", ".$cap.", '".$nam."',".$rat.", '".$desc."')";
 	if ($con->query($sql) === TRUE) {
 		echo "New hut created successfully";
 	}
