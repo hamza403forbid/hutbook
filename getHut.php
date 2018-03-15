@@ -16,7 +16,7 @@ $date = date('Y-m-d',strtotime($date));
 
 if($con != NULL){
 	$r=NULL;
-	$sql="SELECT json_object* FROM `huts` WHERE is_hut=".$ish." ";
+	$sql="SELECT * FROM `huts` WHERE is_hut=".$ish." ";
 	if($city != NULL)
 		$sql=$sql."AND city=".$city." ";
 	if($area != NULL)
@@ -25,7 +25,8 @@ if($con != NULL){
 		$sql=$sql."AND capacity>=".$cap." ";
 	if($date != NULL)
 		$sql=$sql."AND NOT id = ANY((SELECT hut FROM `booking` WHERE on_date='".$date."') UNION (SELECT hut FROM `reservation` WHERE on_day='".$date."'))";
-	$sql=$sql." FOR JSON AUTO;";
-	echo $sql;
+	$sql=$sql.";";
+	$r=$con->query($sql);
+	print_r(json_encode($r->fetch_all()));
 }
 ?>
