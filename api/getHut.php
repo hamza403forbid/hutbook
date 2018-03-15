@@ -36,7 +36,13 @@ if($con != NULL){
 	if($feat){
 		$sql="SELECT * FROM `huts` ORDER BY rating DESC LIMIT 5";
 	}
+	
 	$r=$con->query($sql);
-	print_r(json_encode($r->fetch_all()));
+	$i=array();
+	while($row = $r->fetch_assoc()){
+		
+		$sql= "SELECT url FROM `hut_media` WHERE id=".$row['pic'];
+		print_r($con->query($sql)->fetch_all());
+	}
 }
 ?>
