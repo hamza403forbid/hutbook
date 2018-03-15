@@ -56,20 +56,46 @@ body{
 	font-family: sans-serif;
 	font-size: 16px;
 }
+a{
+	color:inherit;
+	text-decoration: none;
+}
 .call2act{
 	display: block;
+	text-decoration: none;
+	color:inherit;
 	padding: 3px 10px;
 	font-weight: 700;
 	&:hover{
 		background: rgba(0,0,0,0.1);
 	}
 }
+.button{
+	width:150px;
+	padding: 10px 15px;
+	display: inline-block;
+	margin-top: 30px;
+	border-radius: 3px;
+	border:2px solid #fff;
+	background: none;
+	outline:none !important;
+}
 .main-title{
-	font-size:48px;
-	margin-bottom: 30px;	
+	font-size: 60px;
+	margin-bottom: 30px;
+	font-weight: 700;
+	text-shadow: 
+      4px 4px 0px #333, 
+      7px 7px 0px rgba(0, 0, 0, 0.2);
+	span{
+		font-size:72px;
+		display: block;
+		margin-bottom: 10px;
+	}
 }
 .short-text{
-	font-size: 14px;
+	
+	max-width: 800px; 
 }
 .hmid{
 	display: block;
@@ -94,6 +120,10 @@ body{
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+}
+
+.section-header{
+	font-size: 60px;
 }
 nav{
 	display: flex;
@@ -126,8 +156,7 @@ nav{
 					float:left;
 					margin-left:10px;
 					a{
-						text-decoration: none;
-						color:inherit;
+						
 						line-height: 25px;
 						
 					}
@@ -167,11 +196,29 @@ header{
 	@extend .vc;
 	min-height: 100vh;
 	background: url('../img/headerbg.jpeg');
+	background-attachment: fixed;
 	background-position: center;
 	background-size: cover;
 	color: #fff;
 	text-shadow: 0px 3px 1px rgba(0,0,0,0.3);
+	svg {
+	  position: absolute;
+	  bottom: 0;
+	  width: 100%;
+	  height: 100px;
+	}
+
+	@media (max-width: 699px) {
+	  .svg--lg {
+	    display: none;
+	  }
+	}
+
+	
 	div{
 		z-index: 1;	
 	}
+}
+section{
+	padding: 60px 0px;
 }
