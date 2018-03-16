@@ -42,7 +42,12 @@ if($con != NULL){
 	while($row = $r->fetch_assoc()){
 		
 		$sql= "SELECT url FROM `hut_media` WHERE id=".$row['pic'];
-		print_r($con->query($sql)->fetch_all());
+		$s=$con->query($sql);
+		$im = $s->fetch_assoc()['url']
+		$row['url']=$im;
+		array_push($i,$row);
+		
 	}
+	print_r($i);
 }
 ?>

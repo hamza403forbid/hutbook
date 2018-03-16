@@ -244,8 +244,9 @@ section{
 	position: relative;
 	transform: scale(0.95);
 	transition: transform .5s;
+	text-rendering: optimizeLegibility;
 	&:hover{
-		transform: scale(1);
+		transform: none;
 	}
 	img{
 		max-width: 100%;
