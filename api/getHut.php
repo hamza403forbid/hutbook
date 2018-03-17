@@ -36,18 +36,18 @@ if($con != NULL){
 	if($feat){
 		$sql="SELECT * FROM `huts` ORDER BY rating DESC LIMIT 5";
 	}
-	
+
 	$r=$con->query($sql);
 	$i=array();
 	while($row = $r->fetch_assoc()){
-		
+
 		$sql= "SELECT url FROM `hut_media` WHERE id=".$row['pic'];
 		$s=$con->query($sql);
-		$im = $s->fetch_assoc()['url']
-		$row['url']=$im;
+		$im = $s->fetch_assoc();
+		$row['url']=$im['url'];
 		array_push($i,$row);
-		
+
 	}
-	print_r($i);
+	print_r(json_encode($i));
 }
 ?>

@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -10,7 +10,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  box-sizing: border-box;	
+  box-sizing: border-box;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -50,6 +50,7 @@ table {
 		clear: both;
 	}
 }
+$br : 3px;
 
 /***********************************************************************************************/
 body{
@@ -70,22 +71,28 @@ a{
 		background: rgba(0,0,0,0.1);
 	}
 }
+.invert{
+  color:#fff;
+}
 .button{
 	width:150px;
 	padding: 10px 15px;
 	display: inline-block;
 	margin-top: 30px;
-	border-radius: 3px;
+	border-radius: $br;
 	border:2px solid #fff;
 	background: none;
 	outline:none !important;
+  &.dark{
+    border-color: #000;
+  }
 }
 .main-title{
 	font-size: 60px;
 	margin-bottom: 30px;
 	font-weight: 700;
-	text-shadow: 
-      4px 4px 0px #333, 
+	text-shadow:
+      4px 4px 0px #333,
       7px 7px 0px rgba(0, 0, 0, 0.2);
 	span{
 		font-size:72px;
@@ -94,8 +101,12 @@ a{
 	}
 }
 .short-text{
-	
-	max-width: 800px; 
+
+	max-width: 800px;
+}
+.long-text{
+ font-size: 14px;
+	max-width: 800px;
 }
 .hmid{
 	display: block;
@@ -105,22 +116,23 @@ a{
 	text-align: center;
 }
 .container{
-	max-width: 100%;
+	max-width: 1200px;
+  margin:0px auto;
 	padding: 0px 10px;
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
-	
+
 	.half{
-		width:50%;	
+		width:50%;
 	}
 	.three-quater{
-		width:75%;	
+		width:75%;
 	}
 	.full{
 		width: 100%;
 	}
-	
+
 }
 .vc{
 	display: flex;
@@ -157,8 +169,8 @@ nav{
 		line-height: 31px;
 	}
 	div.nav-links{
-		
-		
+
+
 		div{
 			display: inline-block;
 			ul{
@@ -168,9 +180,9 @@ nav{
 					float:left;
 					margin-left:10px;
 					a{
-						
+
 						line-height: 25px;
-						
+
 					}
 				}
 			}
@@ -182,15 +194,18 @@ nav{
 			}
 			&.nav-call2act{
 				border-left:2px solid #fff;
-				
+
 			}
 		}
-		
+
 	}
-	
+
 }
 .overlay{
 	position: relative;
+  *{
+    z-index: 1;
+  }
 	&::before{
 		content: '';
 		display: block;
@@ -202,6 +217,7 @@ nav{
 		background: rgba(0,0,0,0.3);
 		z-index: 0;
 	}
+
 }
 header{
 	@extend .overlay;
@@ -226,9 +242,9 @@ header{
 	  }
 	}
 
-	
+
 	div{
-		z-index: 1;	
+		z-index: 1;
 	}
 }
 section{
@@ -238,19 +254,20 @@ section{
 .hut{
 	width:300px;
 	margin-top: 10px;
-	border-radius: 15px;
-	box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+	border-radius: $br;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.15);
 	padding-bottom: 56px;
 	position: relative;
 	transform: scale(0.95);
-	transition: transform .5s;
+	transition: transform .2s,box-shadow .23s;
 	text-rendering: optimizeLegibility;
 	&:hover{
 		transform: none;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
 	}
 	img{
 		max-width: 100%;
-		border-radius: 15px 15px 0px 0px;
+		border-radius: $br $br 0px 0px;
 		margin-bottom: 15px;
 		display: block;
 	}
@@ -273,7 +290,7 @@ section{
 		width:100%;
 		padding: 15px 0px;
 		background-color: #333;
-		border-radius: 0px 0px 15px 15px;
+		border-radius: 0px 0px $br $br;
 		text-transform: uppercase;
 		font-size: 14px;
 		font-weight: 700;
