@@ -1,7 +1,3 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -6529,32 +6525,5 @@ a.text-dark:hover, a.text-dark:focus {
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important; } }
-/**********************************************************************************************/
-.clearfix::after, .clearfix::before {
-  content: '';
-  display: block;
-  width: 100%;
-  clear: both; }
 
-/***********************************************************************************************/
-.navbar {
-  padding-right: 0px;
-  padding-left: 0px; }
-
-.navbar-light .navbar-toggler {
-  padding: 0px;
-  border: none;
-  margin-top: 0.25rem;
-  outline: none; }
-
-.jumbotron {
-  padding: 0px 2rem;
-  border-radius: 0px;
-  height: 100vh; }
-  .jumbotron .text-center {
-    width: 100%; }
-
-section {
-  padding: 2rem 0; }
-
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=bootstrap.css.map */
