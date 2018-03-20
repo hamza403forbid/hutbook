@@ -16,6 +16,13 @@
 $br : 3px;
 
 /***********************************************************************************************/
+a{
+	color:inherit;
+	&:hover{
+		color:inherit;
+	}
+	
+}
 .navbar{
 	padding-right:0px;
 	padding-left:0px;
@@ -38,4 +45,27 @@ $br : 3px;
 }
 section{
 	padding: 2rem 0;
+}
+.midBorder{
+	@media (min-width:768px){
+		border:2px solid rgba(0,0,0,0.1);border-bottom:none;border-top:none;
+	}
+}
+
+footer{
+	background: $dark;
+	padding: 2em 0px;
+	color:#fff;
+	a{
+		color:inherit;
+		display: inline-block;
+		
+		margin:0px 10px;
+	}
+}
+.fa-star.on{
+	color:$yellow;
+}
+.rating{
+	margin-bottom: 0.5em;
 }

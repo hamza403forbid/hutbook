@@ -6537,6 +6537,11 @@ a.text-dark:hover, a.text-dark:focus {
   clear: both; }
 
 /***********************************************************************************************/
+a {
+  color: inherit; }
+  a:hover {
+    color: inherit; }
+
 .navbar {
   padding-right: 0px;
   padding-left: 0px; }
@@ -6556,5 +6561,26 @@ a.text-dark:hover, a.text-dark:focus {
 
 section {
   padding: 2rem 0; }
+
+@media (min-width: 768px) {
+  .midBorder {
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-bottom: none;
+    border-top: none; } }
+
+footer {
+  background: #343a40;
+  padding: 2em 0px;
+  color: #fff; }
+  footer a {
+    color: inherit;
+    display: inline-block;
+    margin: 0px 10px; }
+
+.fa-star.on {
+  color: #ffc107; }
+
+.rating {
+  margin-bottom: 0.5em; }
 
 /*# sourceMappingURL=style.css.map */

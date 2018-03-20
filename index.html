@@ -3,6 +3,7 @@
 <head>
 	<title>Hutbook::Book A Party</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -56,15 +57,8 @@
 			<h2 class="display-4">Featured Huts</h2>
 			<p class="lead">Lorraine/...I can't let them think I'm chicken! Well, you're right, you're right!</p>
 		</div>
-		<div class="container">
-			<div class="card" style="width:280px;">
-  <img class="card-img-top" src="http://via.placeholder.com/250x180" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
+		<div class="container" id="featuredhuts">
+			<div class="row"></div>
 		</div>
 	</section>
 	<section class="bg-gradient-secondary text-white">
@@ -78,7 +72,7 @@
 			</div>
 			<div class="container">
 				<div class="row justify-content-center">
-					<div class="col-8 text-center">
+					<div class="col-md-8 text-center">
 						<p>Nobody calls me chicken, Needles, nobody! All right, prove it. All right, all right Needles, here's my card, scan it, I'm in. Thanks McFly. See you at the plant tomorrow. (Needles "hangs up" and the screen has the AT&T logo on it.)</p>
 						<a href="#0" class="btn btn-lg btn-outline-light mt-2">Partener Up!</a>
 					</div>
@@ -88,8 +82,29 @@
 	</section>
 	<section>
 		<h2 class="display-4 mb-4 text-center">Contact Us</h2>
-		
+		<div class="container text-center">
+			<div class="row">
+				
+				<div class="col-md-4">
+					<h4><span class="fa fa-phone"></span> Call Us</h4>
+					<p class="lead">XXXX-XXXX-XXX-XX</p>
+				</div>
+				<div class="col-md-4">
+					<div class="midBorder">
+						<h4><span class="fa fa-envelope"></span> Email Us</h4>
+						<p class="lead">XXXX-XXXX-XXX-XX</p>
+					</div>	
+				</div>
+				<div class="col-md-4">
+					<h4><span class="fa fa-map-marker"></span> Meet Us</h4>
+					<p class="lead">XXXX-XXXX-XXX-XX</p>
+				</div>
+			</div>
+		</div>
 	</section>
+	<footer class="text-center">
+		<span class="lead"><strong>Catch Us On:</strong> <a href="#0"><span class="fa fa-facebook"></span></a> <a href="#0"><span class="fa fa-twitter"></span></a> <a href="#0"><span class="fa fa-instagram"></span></a></span>
+	</footer>
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/script.js"></script>
