@@ -32,7 +32,7 @@ $(function(){
 			for(var r in data){
 				$h = data[r];
 				$area= $h["area"]==null ? "" : $h["area"]+" | ";
-				$("#featuredhuts .row").append('<div class="card" style="width:280px;"><img class="card-img-top" src="'+$h["url"]+'" alt="'+$h["name"]+'"><div class="card-body"><h5 class="card-title">'+$h["name"]+'<br><small class="text-muted">'+$area+Cities[$h["city"]]+'</small></h5><div class="rating" data-rating="'+$h["rating"]+'"></div><p class="card-text">'+$h["description"]+'</p><a href="#0" hut-id="'+$h["id"]+'" class="btn btn-primary">Book It</a></div></div>');
+				$("#featuredhuts .row").append('<div class="card featured" style="width:300px;"><img class="card-img-top" src="'+$h["url"]+'" alt="'+$h["name"]+'"><div class="card-body"><h5 class="card-title">'+$h["name"]+'<br><small class="text-muted">'+$area+Cities[$h["city"]]+'</small></h5><div class="rating" data-rating="'+$h["rating"]+'"></div><p class="card-text">'+$h["description"]+'</p><a href="#0" hut-id="'+$h["id"]+'" class="btn btn-primary">Book It</a></div></div>');
 
 			}
 			rate();
@@ -42,10 +42,10 @@ $(function(){
 
 	$(window).on('scroll',function(){
 		if($(window).scrollTop()==0){
-			$('nav').removeClass('scrld');
+			$('nav').removeClass('active');
 		}
 		else{
-			$('nav').addClass('scrld');
+			$('nav').addClass('active');
 		}
 	});
 
