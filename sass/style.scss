@@ -115,8 +115,10 @@ footer{
 		.card{
 			margin-left: 10px;
 			margin-bottom: 10px;
+			position: relative;
+			padding-bottom: 48px;
 			&.featured{
-				position: relative;
+				
 				&::after{
 					content: 'FEATURED';
 					position: absolute;
@@ -129,6 +131,49 @@ footer{
 					padding: 3px 5px 3px 3px;
 				}
 			}
+			.btn{
+				position: absolute;
+				bottom: 0px;
+				left: 0px;
+				width: 100%;
+				border-radius: 0px;
+
+			}
+		}
+	}
+}
+#hut{
+	display: flex;
+	position: fixed;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	width: 100%;
+	top:0px;
+	left: 0px;
+	min-height: 100vh;
+	z-index: 1040;
+	overflow-x: hidden;
+	overflow-y: auto;
+	
+	
+	.container-fluid{
+    		padding: 0px;
+   		background: rgba(255,255,255,0.99);
+	}
+	.bi{
+		height:40vw;
+	}
+	.bi:nth-child(2){
+		margin-left: -15px;
+		padding-top: 30px;
+	}
+	.carousel-item{
+		height:100%;
+		background-size:cover;
+		background-position: center;
+		img{
+			display: none !important;
 		}
 	}
 }

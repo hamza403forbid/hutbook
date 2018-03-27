@@ -7,10 +7,10 @@
 		public function estabCon(){
 			if(self::$con == NULL){
 				
-				$servername = "localhost";
-				$username = "root";
-				$password = "";
-				$dbname = "hutbook";
+				$servername = "t89yihg12rw77y6f.cbetxkdyhwsb.us-east-1.rds.amazonaws.com";
+				$username = "u88c5x7j685o87jk";
+				$password = "s31v0o5wh1550tsi";
+				$dbname = "u968pubdjpn44184";
 				// Create connection
 				self::$con = new mysqli($servername, $username, $password, $dbname);
 

@@ -1,5 +1,6 @@
 $(function(){
 	var Cities=["Karachi","Lahore"];
+	var huts=[];
 	var rate= function(){
 		$('.rating').each(function(){
 			var that = $(this);
@@ -15,6 +16,16 @@ $(function(){
 			}
 		});
 	}
+	var showHut = function(){
+		console.log(huts);
+		var i=$(this).parents('.card').index();
+		var h = huts[i];
+		
+	}
+	$('#hut .carousel-item').each(function(){
+		var src = $(this).find('img').attr('src');
+		$(this).css('background-image','url('+src+')');
+	});
 	$.ajax('api/getHut.php',{
 		crossDomain:true,
 		data:{
@@ -31,15 +42,19 @@ $(function(){
 			data = $.parseJSON(data);
 			for(var r in data){
 				$h = data[r];
+				huts.push($h);
+				$isH= $h["is_hut"] ? "Hut" + " | ": "Farmhouse" + " | ";
 				$area= $h["area"]==null ? "" : $h["area"]+" | ";
-				$("#featuredhuts .row").append('<div class="card featured" style="width:300px;"><img class="card-img-top" src="'+$h["url"]+'" alt="'+$h["name"]+'"><div class="card-body"><h5 class="card-title">'+$h["name"]+'<br><small class="text-muted">'+$area+Cities[$h["city"]]+'</small></h5><div class="rating" data-rating="'+$h["rating"]+'"></div><p class="card-text">'+$h["description"]+'</p><a href="#0" hut-id="'+$h["id"]+'" class="btn btn-primary">Book It</a></div></div>');
+				$("#featuredhuts .row").append('<div class="card featured" style="width:300px;"><img class="card-img-top" src="'+$h["url"]+'" alt="'+$h["name"]+'"><div class="card-body"><h5 class="card-title">'+$h["name"]+'<br><small class="text-muted">'+$isH+$area+Cities[$h["city"]]+'</small></h5><div class="rating" data-rating="'+$h["rating"]+'"></div><a href="#0" hut-id="'+$h["id"]+'" class="booker btn btn-primary">Book It</a></div></div>');
 
 			}
 			rate();
-
+			$('.card a').on('click',showHut);
 		}
 	});
-
+	
+	
+	
 	$(window).on('scroll',function(){
 		if($(window).scrollTop()==0){
 			$('nav').removeClass('active');
