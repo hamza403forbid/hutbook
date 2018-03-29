@@ -142,6 +142,23 @@ footer{
 		}
 	}
 }
+#lim{
+	font-size: 30px;
+	
+	animation: spin 1s infinite;
+}
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
 #hut{
 	display: flex;
 	position: fixed;
@@ -161,12 +178,18 @@ footer{
     		padding: 0px;
    		background: rgba(255,255,255,0.99);
 	}
-	.bi{
-		height:40vw;
+	.bi:nth-child(1){
+		height:50vh;
 	}
 	.bi:nth-child(2){
-		margin-left: -15px;
+		
 		padding-top: 30px;
+		margin-left: -15px;
+		
+		@media (max-width:992px){
+			margin-left: 0px;
+			padding: 30px;
+		}
 	}
 	.carousel-item{
 		height:100%;
@@ -175,5 +198,9 @@ footer{
 		img{
 			display: none !important;
 		}
+	}
+	.full-desc{
+		max-height: 9em;
+		overflow-y: auto;
 	}
 }

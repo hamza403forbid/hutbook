@@ -26,6 +26,9 @@ $(function(){
 		var src = $(this).find('img').attr('src');
 		$(this).css('background-image','url('+src+')');
 	});
+	$('#lim').bind('ajaxStart', function(){
+	    $(this).show();
+	});
 	$.ajax('api/getHut.php',{
 		crossDomain:true,
 		data:{
@@ -38,7 +41,7 @@ $(function(){
 			'date': null,
 		},
 		success: function(data){
-			// console.log(data);
+			 console.log(data);
 			data = $.parseJSON(data);
 			for(var r in data){
 				$h = data[r];
@@ -50,10 +53,11 @@ $(function(){
 			}
 			rate();
 			$('.card a').on('click',showHut);
+		},
+		complete:function(){
+			$("#lim").hide();
 		}
 	});
-	
-	
 	
 	$(window).on('scroll',function(){
 		if($(window).scrollTop()==0){

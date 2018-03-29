@@ -6638,6 +6638,25 @@ footer {
       width: 100%;
       border-radius: 0px; }
 
+#lim {
+  font-size: 30px;
+  animation: spin 1s infinite; }
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg); }
+  to {
+    -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg); } }
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
 #hut {
   display: flex;
   position: fixed;
@@ -6654,16 +6673,23 @@ footer {
   #hut .container-fluid {
     padding: 0px;
     background: rgba(255, 255, 255, 0.99); }
-  #hut .bi {
-    height: 40vw; }
+  #hut .bi:nth-child(1) {
+    height: 50vh; }
   #hut .bi:nth-child(2) {
-    margin-left: -15px;
-    padding-top: 30px; }
+    padding-top: 30px;
+    margin-left: -15px; }
+    @media (max-width: 992px) {
+      #hut .bi:nth-child(2) {
+        margin-left: 0px;
+        padding: 30px; } }
   #hut .carousel-item {
     height: 100%;
     background-size: cover;
     background-position: center; }
     #hut .carousel-item img {
       display: none !important; }
+  #hut .full-desc {
+    max-height: 9em;
+    overflow-y: auto; }
 
 /*# sourceMappingURL=style.css.map */
