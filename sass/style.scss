@@ -174,9 +174,17 @@ footer{
 	overflow-y: auto;
 	
 	
-	.container-fluid{
+	.container-fluid.hut-content{
     		padding: 0px;
    		background: rgba(255,255,255,0.99);
+		position: relative;
+		#close-hut{
+			position: absolute;
+			top:10px;
+			right:10px;
+			color:#fff;
+			z-index: 10 ;
+		}
 	}
 	.bi:nth-child(1){
 		height:50vh;
@@ -201,6 +209,18 @@ footer{
 	}
 	.full-desc{
 		max-height: 9em;
-		overflow-y: auto;
+		overflow-y: hidden ;
+		display: block;
+		position: relative;
+		padding-right: 10px;
+		margin-bottom: 20px;
+		.scroller{
+			display: block;
+			width: 4px;
+			position: absolute;
+			top:0px;
+			right: 0px;
+			background: rgba(0,0,0,0.5) ;
+		}
 	}
 }

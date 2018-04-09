@@ -6670,9 +6670,16 @@ footer {
   z-index: 1040;
   overflow-x: hidden;
   overflow-y: auto; }
-  #hut .container-fluid {
+  #hut .container-fluid.hut-content {
     padding: 0px;
-    background: rgba(255, 255, 255, 0.99); }
+    background: rgba(255, 255, 255, 0.99);
+    position: relative; }
+    #hut .container-fluid.hut-content #close-hut {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #fff;
+      z-index: 10; }
   #hut .bi:nth-child(1) {
     height: 50vh; }
   #hut .bi:nth-child(2) {
@@ -6690,6 +6697,17 @@ footer {
       display: none !important; }
   #hut .full-desc {
     max-height: 9em;
-    overflow-y: auto; }
+    overflow-y: hidden;
+    display: block;
+    position: relative;
+    padding-right: 10px;
+    margin-bottom: 20px; }
+    #hut .full-desc .scroller {
+      display: block;
+      width: 4px;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      background: rgba(0, 0, 0, 0.5); }
 
 /*# sourceMappingURL=style.css.map */

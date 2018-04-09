@@ -67,5 +67,11 @@ $(function(){
 			$('nav').addClass('active');
 		}
 	});
-
+	
+	$('.scroller').css('height',(144/$('.content').height())*100+'%');
+	$( ".scroller" ).draggable({ axis: "y" ,containment: "parent",scroll: true, scrollSensitivity: 100});
+	$('#close-hut').click(function(){
+		
+		$( "#hut" ).hide( 'drop', 300);
+	});
 });
